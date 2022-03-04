@@ -62,22 +62,29 @@ function setup() {
     }else{
         console.log('no local storage available')
     }
+    
+    //reseting buttons and text area
+    reset()
+    
     })
     
     //Listener for cancel button
-    $('#cancel').click(()=>{
+    $('#cancel').click(reset)
+}
+
+//function to hide text area and reset buttons
+function reset() {
+    
+    //show buttons
+    $("#edit1").show()
+    $("#edit2").show()
+    $("#edit3").show()
         
-        //show buttons
-        $("#edit1").show()
-        $("#edit2").show()
-        $("#edit3").show()
+    //uncheck buttons
+    $('#edit1').prop('checked',false)
+    $('#edit2').prop('checked',false)
+    $('#edit3').prop('checked',false)
         
-        //uncheck buttons
-        $('#edit1').prop('checked',false)
-        $('#edit2').prop('checked',false)
-        $('#edit3').prop('checked',false)
-        
-        //hide text box and keyboard
-        $('#textArea').css('display','none')
-    })
+    //hide text box and keyboard
+    $('#textArea').hide()
 }
