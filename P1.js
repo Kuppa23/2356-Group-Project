@@ -42,4 +42,42 @@ function setup() {
             $("textArea").hide()
         }
     });
+    
+    //Listener for submit button
+    $('#submit').click(()=>{
+        
+        //check if storage is available
+        if(typeof Storage !=='undefined'){
+        
+            //get the word from user
+            let input = $('#words').val();
+        
+            //put input in object
+            let obj = {name:input}
+
+            //Store stringified object to localStorage
+            window.localStorage.setItem(blogNumb,JSON.stringify(obj))
+
+    //else if there is no local storage
+    }else{
+        console.log('no local storage available')
+    }
+    })
+    
+    //Listener for cancel button
+    $('#cancel').click(()=>{
+        
+        //show buttons
+        $("#edit1").show()
+        $("#edit2").show()
+        $("#edit3").show()
+        
+        //uncheck buttons
+        $('#edit1').prop('checked',false)
+        $('#edit2').prop('checked',false)
+        $('#edit3').prop('checked',false)
+        
+        //hide text box and keyboard
+        $('#textArea').css('display','none')
+    })
 }
