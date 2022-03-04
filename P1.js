@@ -6,12 +6,12 @@ function setup() {
             $("#edit2").hide()
             $("#edit3").hide()
             blogNum = 1;
-            $("textArea").show()
+            $("#textArea").show()
         }else{
             $("#edit2").show()
             $("#edit3").show()
             blogNum = 0;
-            $("textArea").hide()
+            $("#textArea").hide()
         }
     });
 
@@ -20,12 +20,12 @@ function setup() {
             $("#edit1").hide()
             $("#edit3").hide()
             blogNum = 2;
-            $("textArea").show()
+            $("#textArea").show()
         }else{
             $("#edit1").show()
             $("#edit3").show()
             blogNum = 0;
-            $("textArea").hide()
+            $("#textArea").hide()
         }
     });
 
@@ -34,12 +34,12 @@ function setup() {
             $("#edit1").hide()
             $("#edit2").hide()
             blogNum = 3;
-            $("textArea").show()
+            $("#textArea").show()
         }else{
             $("#edit1").show()
             $("#edit2").show()
             blogNum = 0;
-            $("textArea").hide()
+            $("#textArea").hide()
         }
     });
     
@@ -56,7 +56,7 @@ function setup() {
             let obj = {name:input}
 
             //Store stringified object to localStorage
-            window.localStorage.setItem(blogNumb,JSON.stringify(obj))
+            window.localStorage.setItem('edit'+blogNum,JSON.stringify(obj))
 
     //else if there is no local storage
     }else{
