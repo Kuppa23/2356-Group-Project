@@ -1,6 +1,13 @@
 let blogNum = 0;
 
 function setup() {
+
+    //run onload function
+    onload()
+
+    //hide text area
+    $('#textArea').hide()
+
     $("#edit1").change(function() {
         if(this.checked) {
             $("#edit2").hide()
@@ -50,13 +57,13 @@ function setup() {
         if(typeof Storage !=='undefined'){
         
             //get the word from user
-            let input = $('#words').val();
-        
-            //put input in object
-            let obj = {name:input}
+            var input = $('#words').val();
 
+            //emptying the text box
+            $('#words').val('')
+        
             //Store stringified object to localStorage
-            window.localStorage.setItem('edit'+blogNum,JSON.stringify(obj))
+            window.localStorage.setItem('edit'+blogNum,input)
 
     //else if there is no local storage
     }else{
@@ -65,6 +72,9 @@ function setup() {
     
     //reseting buttons and text area
     reset()
+
+    //Write input to edit box
+    $('#text'+blogNum).val(input)
     
     })
     
@@ -87,4 +97,16 @@ function reset() {
         
     //hide text box and keyboard
     $('#textArea').hide()
+
+    //blanking the text area
+    $('#words').val('')
+}
+
+//function ran onload
+function onload() {
+
+    //writing items from local storage to text boxes
+    $('#text1').val(localStorage.getItem('edit1'))
+    $('#text2').val(localStorage.getItem('edit2'))
+    $('#text3').val(localStorage.getItem('edit3'))
 }
