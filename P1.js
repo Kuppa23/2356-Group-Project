@@ -5,9 +5,6 @@ function setup() {
     //run onload function
     onload()
 
-    //hide text area
-    $('#textArea').hide()
-
     $("#edit1").change(function() {
         if(this.checked) {
             $("#edit2").hide()
@@ -109,4 +106,8 @@ function onload() {
     $('#text1').val(localStorage.getItem('edit1'))
     $('#text2').val(localStorage.getItem('edit2'))
     $('#text3').val(localStorage.getItem('edit3'))
+    
+    
+    //hide text area
+    $('#textArea').hide()
 }
